@@ -1,24 +1,19 @@
 <?php
-
-function GetData()
-{
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "steden";
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "steden";
 
 //Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed:. $conn->connect_error");
-    }
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed:. $conn->connect_error");
+}
 
 //define and execute query
-    $sql = "select * from images";
-    $result = $conn->query($sql);
-    return $result;
-}
-$result = GetData();
+$sql = "select * from images";
+$result = $conn->query($sql);
+
 ?>
 
 
@@ -48,7 +43,7 @@ $result = GetData();
 
 <div class="jumbotron text-center">
     <h1>De leukste plekken in Europa</h1>
-    <p>Tips voor citytrips en vrolijke vakantiegangers!</p>
+    <p>Resize this responsive page to see the effect!</p>
 </div>
 
 <div class="container">
@@ -63,12 +58,13 @@ $result = GetData();
             <p>$row[img_width] x $row[img_height] pixels</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            <img src='./images/$row[img_filename]' width='300' height='200'/>
+            <img src='./images/$row[img_filename]' width='300' height='200'/></br>
+            <a href='stad.php'>Meer info</a>
             </div>";
 
-        //alle afbeeldingen overlopen, en kolom opmaken met titel en afbeelding
-        }
+                //alle afbeeldingen overlopen, en kolom opmaken met titel en afbeelding
             }
+        }
         else
         {
             echo "no records found";
