@@ -20,7 +20,7 @@ $afbeeldingen = array("Berlijn"=>"<img src=./images/berlin.jpg width='300' heigh
 <body>
 
 <div class="jumbotron text-center">
-    <h1>My First Bootstrap Page</h1>
+    <h1>De leukste plekken in Europa</h1>
     <p>Resize this responsive page to see the effect!</p>
 </div>
 
