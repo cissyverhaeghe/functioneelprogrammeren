@@ -1,9 +1,11 @@
 <?php
+
+//collect data
 require_once "config.php";
 
 $sql = "select * from images";
 
-
+//collect required information from URL
 if ($_GET["img_id"] > "") {
     $sql .= " where img_id like " . $_GET["img_id"];
     //var_dump($sql);
@@ -11,6 +13,7 @@ if ($_GET["img_id"] > "") {
 $result = GetData($sql);
 ?>
 
+//page layout information bootstrap
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,10 +36,12 @@ $result = GetData($sql);
             crossorigin="anonymous"></script>
 
 </head>
+//styling
 <style>
-    .information{
+    .information {
         padding: 25px;
     }
+
     img {
         display: block;
         height: auto;
@@ -55,7 +60,7 @@ $result = GetData($sql);
 <?php
 //show result (if there is any)
 if ($result->num_rows > 0) {
-    //output data of each row
+    //output data
     while ($row = $result->fetch_assoc()) {
         echo " <div class='information'>
             <h3>$row[img_title]</h3>
@@ -65,14 +70,11 @@ if ($result->num_rows > 0) {
             <a href='steden2.php'>Terug naar overzicht</a>
             </div>";
 
-        //alle afbeeldingen overlopen, en kolom opmaken met titel en afbeelding
     }
 } else {
     echo "no records found";
 }
 
 ?>
-
-
 </body>
 </html>

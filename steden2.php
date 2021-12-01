@@ -1,5 +1,5 @@
 <?php
-
+// fetch information from database
 require_once "config.php";
 
 $sql = "select * from images";
@@ -51,8 +51,6 @@ $result = GetData($sql);
             <img src='./images/$row[img_filename]' width='300' height='200'/></br>
             <a href='stad.php?img_id=$row[img_id]'>Meer info</a>
             </div>";
-
-                //alle afbeeldingen overlopen, en kolom opmaken met titel en afbeelding
             }
         }
         else
