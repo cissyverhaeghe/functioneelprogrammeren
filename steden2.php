@@ -57,7 +57,7 @@ $result = GetData($sql);
         {
             echo "no records found";
         }
-        //$conn->close();
+        //$conn->close(); test
         ?>
     </div>
 </div>
