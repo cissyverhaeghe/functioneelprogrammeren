@@ -15,6 +15,7 @@ $result = GetData($sql);
 
 //print layout
 PrintHead();
+PrintBody();
 PrintJumbo("haha dit is een stad","");
 
 ?>

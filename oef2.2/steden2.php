@@ -8,6 +8,7 @@ $result = GetData($sql);
 
 //hoofd printen en jumbo
 PrintHead();
+PrintBody();
 PrintJumbo("De ALLERleukste plekken in Europa", "da ga nu toch ni me corona");
 ?>
 

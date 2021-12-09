@@ -14,3 +14,8 @@ function PrintJumbo($header_text,$paragraph_text){
     $new_content = str_replace( "@@header@@", "$header_text", $content);
     print str_replace( "@@paragraph@@", "$paragraph_text", $new_content);
 }
+
+//function to print body tag
+function PrintBody(){
+    echo "<body>";
+}

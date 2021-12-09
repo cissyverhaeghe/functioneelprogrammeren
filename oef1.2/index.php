@@ -1,5 +1,5 @@
 <?php
-$afbeeldingen = array("<img src=./images/berlin.jpg width='300' height='200'>","<img src=./images/london.jpg width='300' height='200'>","<img src=./images/paris.jpg width='300' height='200'> ");
+$afbeeldingen = array("<img src=../images/berlin.jpg width='300' height='200'>", "<img src=../images/london.jpg width='300' height='200'>", "<img src=../images/paris.jpg width='300' height='200'> ");
 ?>
 
 <!DOCTYPE html>

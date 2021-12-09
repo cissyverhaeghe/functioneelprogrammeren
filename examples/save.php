@@ -10,16 +10,6 @@ $table_name = $_POST["tabel"];
 $sql = "SHOW FULL COLUMNS FROM $table_name";
 $rows = GetData($sql);
 
-//foreach($rows as $row){
-  //  print $row["field"]."<br>";
-
-    //if(key_exists($row["field"]),$POST)){
-
-    //}
-//}
-//die();
-
-
 $sql = "INSERT INTO $table_name SET " .
 //" hon_id=" . $_POST["hon_id"] . "," .
     " hon_merk=" . "'" . $_POST["hon_merk"] . "'" . "," .

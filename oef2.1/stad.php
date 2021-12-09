@@ -13,7 +13,7 @@ if ($_GET["img_id"] > "") {
 $result = GetData($sql);
 ?>
 
-//page layout information bootstrap
+<!--page layout information bootstrap-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +36,8 @@ $result = GetData($sql);
             crossorigin="anonymous"></script>
 
 </head>
-//styling
+<!--styling-->
+
 <style>
     .information {
         padding: 25px;
@@ -66,7 +67,7 @@ if ($result->num_rows > 0) {
             <h3>$row[img_title]</h3>
             <p>filename: $row[img_filename]</p>
             <p>$row[img_width] x $row[img_height] pixels</p>
-            <img src='./images/$row[img_filename]'/></br>
+            <img src='../images/$row[img_filename]'/></br>
             <a href='steden2.php'>Terug naar overzicht</a>
             </div>";
 

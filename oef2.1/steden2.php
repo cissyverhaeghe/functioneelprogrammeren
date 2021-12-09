@@ -48,7 +48,7 @@ $result = GetData($sql);
             <p>$row[img_width] x $row[img_height] pixels</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            <img src='./images/$row[img_filename]' width='300' height='200'/></br>
+            <img src='../images/$row[img_filename]' width='300' height='200'/></br>
             <a href='stad.php?img_id=$row[img_id]'>Meer info</a>
             </div>";
             }

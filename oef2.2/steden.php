@@ -8,6 +8,7 @@ $result = GetData($sql);
 
 //hoofd printen en jumbo
 PrintHead();
+PrintBody();
 PrintJumbo("De leukste plekken in Europa","dit is een paragraaf");
 ?>
 
