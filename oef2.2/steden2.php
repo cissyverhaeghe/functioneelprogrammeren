@@ -5,21 +5,12 @@ require_once "html_components.php";
 
 $sql = "select * from images";
 $result = GetData($sql);
-?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<?php
+//hoofd printen en jumbo
 PrintHead();
+PrintJumbo("De ALLERleukste plekken in Europa", "da ga nu toch ni me corona");
 ?>
 
-<body>
-
-<div class="jumbotron text-center">
-    <h1>De leukste plekken in Europa</h1>
-    <p>Resize this responsive page to see the effect!</p>
-</div>
 
 <div class="container">
     <div class="row">

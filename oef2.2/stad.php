@@ -12,15 +12,13 @@ if ($_GET["img_id"] > "") {
     //var_dump($sql);
 }
 $result = GetData($sql);
-?>
 
-//page layout information bootstrap
-<!DOCTYPE html>
-<html lang="en">
-<?php
+//print layout
 PrintHead();
+PrintJumbo("haha dit is een stad","");
+
 ?>
-//styling
+<!-- styling -->
 <style>
     .information {
         padding: 25px;
@@ -34,11 +32,6 @@ PrintHead();
     }
 
 </style>
-<body>
-
-<div class="jumbotron text-center">
-    <h1>Detail Stad</h1>
-</div>
 
 
 <?php
