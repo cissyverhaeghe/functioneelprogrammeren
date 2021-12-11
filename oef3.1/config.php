@@ -1,40 +1,31 @@
 <?php
-require_once "config2.php";
-
-function GetData( $sql )
+function GetData($sql)
 {
-    // create connection
-    global $servername, $username, $password, $dbname;
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "steden";
 
+//Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // check connection
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection failed:. $conn->connect_error");
     }
 
-    // execute given query
+//define and execute query
     $result = $conn->query($sql);
-
-    // build data array
-    $data = [];
-    if ( $result->num_rows > 0 )
-    {
-        while( $row = $result->fetch_assoc() )
-        {
-            $data[] = $row;
-        }
-    }
-
-    // close connection
-    $conn->close();
-
-    // return data array
-    return $data;
+    return $result;
+    return $conn;
 }
+
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "steden";
 
 function ExecSQL( $sql )
 {
+
     // create connection
     global $servername, $username, $password, $dbname;
 
