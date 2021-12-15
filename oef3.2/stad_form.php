@@ -4,6 +4,7 @@
 require_once "config.php";
 require_once "html_components.php";
 require_once "select.php";
+require_once "security.php";
 
 $sql = "select * from images";
 
@@ -43,6 +44,8 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo
         "<form id='mainform' name='mainform' method='post' action='save.php'>
+<input type='hidden' name='csrf' value='";GenerateCSRF('stad_form.php');
+        echo "'>
     <div class='form-group row'>
         <label for='staticImgID' class='col-sm-2 col-form-label'>ID</label>
         <div class='col-sm-10'>
@@ -92,3 +95,4 @@ if ($result->num_rows > 0) {
 
 </body>
 </html>
+

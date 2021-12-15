@@ -4,6 +4,26 @@ require_once "config.php";
 
 print json_encode($_POST);
 
+session_start();
+
+print "Dit is save.php<br>";
+
+print "De in de sessie opgeslagen token is deze: " . $_SESSION["latest_csrf"] . "<br>" ;
+
+print '-----------DIT IS $_POST----------<br>';
+var_dump($_POST);
+print '---------------------------------------<br>';
+
+// if ( ! hash_equals( $_POST['csrf'], $_SESSION['latest_csrf'] ) )
+// {
+// header( "Location: no_access.php");
+// die();
+// }
+// else
+// {
+// print "CRSF is OK!!!!<br>";
+//}
+
 
 $sql = "SHOW FULL COLUMNS FROM images";
 $rows = GetData($sql);
@@ -25,11 +45,11 @@ foreach ($rows as $row) {
 
 print implode(", ", $fields_values) . "<br>";
 
-$sql = "UPDATE images SET " . implode(", ", $fields_values) . " WHERE img_id=$_POST[img_id] ";
+$sql = "UPDATE images SET " . implode(", ", $fields_values) . " WHERE img_id= $_POST[img_id] ";
 
 print $sql . "<br>";
 
-// ExecSQL($sql);
+//ExecSQL($sql);
 // $result = ExecSQL($sql);
 
 // var_dump($result);
