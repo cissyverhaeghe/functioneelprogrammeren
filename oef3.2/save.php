@@ -49,10 +49,10 @@ $sql = "UPDATE images SET " . implode(", ", $fields_values) . " WHERE img_id= $_
 
 print $sql . "<br>";
 
-//ExecSQL($sql);
-// $result = ExecSQL($sql);
+ExecSQL($sql);
+$result = ExecSQL($sql);
 
-// var_dump($result);
+var_dump($result);
 print "<br>";
 
 
