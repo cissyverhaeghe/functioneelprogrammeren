@@ -15,7 +15,7 @@ PrintNavbar();
 
 <?php
     //get data
-    $data = GetData( "select * from image" );
+    $data = GetData( "select * from images" );
 
     //get template
     $template = file_get_contents("templates/column.html");
