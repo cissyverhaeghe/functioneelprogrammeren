@@ -61,7 +61,6 @@ function SaveFormData()
 
         $str_keys_values = implode(" , ", $keys_values );
 
-
         //extend SQL with key-values
         $sql .= $str_keys_values;
 
