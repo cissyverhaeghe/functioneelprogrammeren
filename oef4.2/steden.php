@@ -11,6 +11,10 @@ PrintNavbar();
 ?>
 
 <div class="container">
+    <?php
+    if($msgs != "")  print '<div class="alert alert-success">'. $msgs.'</div>';
+
+    ?>
     <div class="row">
 
 <?php

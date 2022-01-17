@@ -30,6 +30,11 @@ function SaveFormData()
         $sending_form_uri = $_SERVER['HTTP_REFERER'];
         CompareWithDatabase( $table, $pkey );
 
+
+        if (  key_exists("usr_password", $_POST)) {
+
+            $_POST['usr_password'] = password_hash( $_POST['usr_password'], PASSWORD_BCRYPT );
+        }
         //terugkeren naar afzender als er een fout is
         if ( count($_SESSION['errors']) > 0 ) { header( "Location: " . $sending_form_uri ); exit(); }
 
@@ -46,7 +51,7 @@ function SaveFormData()
         foreach ( $_POST as $field => $value )
         {
             //skip non-data fields
-            if ( in_array( $field, [ 'table', 'pkey', 'afterinsert', 'afterupdate', 'csrf' ] ) ) continue;
+            if ( in_array( $field, [ 'table', 'pkey', 'afterinsert', 'afterupdate', 'csrf', 'msgs' ] ) ) continue;
 
             //handle primary key field
             if ( $field == $pkey )
@@ -75,6 +80,8 @@ function SaveFormData()
         print $sql ;
         print "<br>";
         print $result->rowCount() . " records affected";
+
+        $_SESSION['msgs'] = $_POST['msgs'];
 
         //redirect after insert or update
         if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../" . $_POST["afterinsert"] );
