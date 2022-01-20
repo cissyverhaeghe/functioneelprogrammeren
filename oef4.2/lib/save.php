@@ -31,7 +31,7 @@ function SaveFormData()
 
 
         if (key_exists("usr_password", $_POST)) {
-            ValidateUsrPassword($_POST['usr_password']);
+            ValidateUsrPassword($_POST['usr_password'], $_POST['usr_password2']);
             $_POST['usr_password'] = password_hash($_POST['usr_password'], PASSWORD_BCRYPT);
         }
 

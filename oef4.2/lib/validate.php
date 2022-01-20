@@ -98,11 +98,13 @@ function GetFieldType($definition)
     return [$type, $length, $precision];
 }
 
-function ValidateUsrPassword($password)
+function ValidateUsrPassword($password, $password2)
 {
     if (strlen($password) < 8) {
         $_SESSION['errors']['usr_password_error'] = "Het wachtwoord moet minstens 8 tekens bevatten";
-
+    }
+    if ($password != $password2) {
+        $_SESSION['errors']['usr_password_error'] = "Wachtwoorden komen niet overeen";
     }
 }
 
