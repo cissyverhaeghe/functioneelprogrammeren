@@ -1,11 +1,11 @@
 <?php
-error_reporting( E_ALL );
-ini_set( 'display_errors', 1 );
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require_once "lib/autoload.php";
 
 PrintHead();
-PrintJumbo( $title = "Registratie", $subtitle = "" );
+PrintJumbo($title = "Registratie", $subtitle = "");
 ?>
 
 <div class="container">
@@ -13,23 +13,28 @@ PrintJumbo( $title = "Registratie", $subtitle = "" );
 
         <?php
 
-            //get data
-            $data = GetData( "select * from user" );
-            $row = $data = [ 0 => [ "usr_voornaam" => "", "usr_naam" => "", "usr_email" => "", "usr_password" => "" ]];
+        //get data
 
-            //add extra elements
-            $extra_elements['csrf_token'] = GenerateCSRF( "stad_form.php"  );
+        if (count($old_post) > 0) {
 
-            //get template
-            $output = file_get_contents("templates/register.html");
+            $data = [0 => ["usr_voornaam" => "$old_post[usr_voornaam]", "usr_naam" => "$old_post[usr_naam]", "usr_email" => "$old_post[usr_email]", "usr_password" => ""]];
+        } else {
+            $data = [0 => ["usr_voornaam" => "", "usr_naam" => "", "usr_email" => "", "usr_password" => ""]];
+        }
 
-            //merge
-            $output = MergeViewWithData( $output, $data );
-            $output = MergeViewWithExtraElements( $output, $extra_elements );
-            $output = MergeViewWithErrors( $output, $errors );
-            $output = RemoveEmptyErrorTags( $output, $data );
+        //add extra elements
+        $extra_elements['csrf_token'] = GenerateCSRF("stad_form.php");
 
-            print $output;
+        //get template
+        $output = file_get_contents("templates/register.html");
+
+        //merge
+        $output = MergeViewWithData($output, $data);
+        $output = MergeViewWithExtraElements($output, $extra_elements);
+        $output = MergeViewWithErrors($output, $errors);
+        $output = RemoveEmptyErrorTags($output, $data);
+
+        print $output;
         ?>
 
     </div>
