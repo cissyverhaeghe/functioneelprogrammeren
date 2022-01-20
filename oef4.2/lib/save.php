@@ -37,6 +37,7 @@ function SaveFormData()
 
         if (key_exists("usr_email", $_POST)) {
             ValidateUsrEmail($_POST['usr_email']);
+            CheckUniqueUsrEmail($_POST['usr_email']);
         }
 
         //terugkeren naar afzender als er een fout is

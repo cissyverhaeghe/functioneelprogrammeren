@@ -110,4 +110,14 @@ function ValidateUsrEmail($email)
 {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['errors']['usr_email_error'] = "Geen geldig e-mailadres!";
-}}
+    }
+}
+
+function CheckUniqueUsrEmail($email)
+{
+    $sql = "SELECT * FROM user WHERE usr_email='" . $email . "'";
+    $rows = GetData($sql);
+    if ($rows[0]['usr_email'] == $email) {
+        $_SESSION['errors']['usr_email_error'] = "Er bestaat al een gebruiker met dit e-mailadres";
+    }
+}
