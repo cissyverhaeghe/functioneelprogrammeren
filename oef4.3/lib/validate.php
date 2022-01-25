@@ -113,6 +113,35 @@ function CheckUniqueUsrEmail( $email )
     return true;
 }
 
+function CheckEmailInDatabase( $email )
+{
+    $sql = "SELECT * FROM user WHERE usr_email='" . $email . "'";
+    $rows = GetData($sql);
+
+    if (count($rows) > 0)
+    {
+        $_SESSION['errors']['usr_email_error'] = "Er bestaat geen gebruiker met die e-mailadres";
+        return false;
+    }
+
+    return true;
+}
+
+function CheckCorrectPassword( $email, $password )
+
+    //the password_verify has to be incorporated into this
+{
+    $sql = "SELECT * FROM user WHERE usr_email='" . $email . "' and usr_password=''" . $password."'";
+    $rows = GetData($sql);
+    if (count($rows) > 0)
+    {
+        $_SESSION['errors']['usr_password_error'] = "Login geslaagd";
+        return true;
+    }
+
+    return false;
+}
+
 function isInt($value) {
     return is_numeric($value) && floatval(intval($value)) === floatval($value);
 }
