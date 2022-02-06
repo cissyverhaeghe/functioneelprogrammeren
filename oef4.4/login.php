@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+$public_access = true;
 require_once "lib/autoload.php";
 
 PrintHead();
@@ -13,9 +14,7 @@ PrintJumbo($title = "Login", $subtitle = "");
 
         <?php
         //get data
-
         $data = [0 => ["usr_email" => "", "usr_password" => ""]];
-
 
         //get template
         $output = file_get_contents("templates/login.html");
@@ -26,6 +25,8 @@ PrintJumbo($title = "Login", $subtitle = "");
         //merge
         $output = MergeViewWithData($output, $data);
         $output = MergeViewWithExtraElements($output, $extra_elements);
+        //$output = MergeViewWithErrors( $output, $errors );
+        //$output = RemoveEmptyErrorTags( $output, $data );
 
         print $output;
         ?>
