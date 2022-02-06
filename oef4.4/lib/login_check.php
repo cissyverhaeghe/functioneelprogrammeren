@@ -8,15 +8,7 @@ if ( LoginCheck() )
     $email = $_POST['usr_email'];
     $sql = "SELECT * FROM user WHERE usr_email='$email' ";
     $data = GetData($sql);
-    //$_SESSION['usr_voornaam'] = "piet";
 
-    //if ( count($data) > 0 )
-    //{
-      //  foreach ( $data as $row )
-        //{
-          //  $_SESSION[$row] = $row;
-        //}
-   // }
     foreach ( $data as $row )
     {
        foreach( array_keys($row) as $field )

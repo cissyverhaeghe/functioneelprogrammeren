@@ -1,7 +1,7 @@
 <?php
 error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
-
+$public_access = false;
 require_once "lib/autoload.php";
 
 PrintHead();
@@ -14,7 +14,6 @@ PrintNavbar();
     <div class="row">
 
 <?php
-var_dump($_SESSION['user']);
     //toon messages als er zijn
     foreach ( $msgs as $msg )
     {
