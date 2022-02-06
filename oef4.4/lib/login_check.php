@@ -5,11 +5,35 @@ require_once "autoload.php";
 
 if ( LoginCheck() )
 {
-    print "INLOGGEN GELUKT";
+    $email = $_POST['usr_email'];
+    $sql = "SELECT * FROM user WHERE usr_email='$email' ";
+    $data = GetData($sql);
+    //$_SESSION['usr_voornaam'] = "piet";
+
+    //if ( count($data) > 0 )
+    //{
+      //  foreach ( $data as $row )
+        //{
+          //  $_SESSION[$row] = $row;
+        //}
+   // }
+    foreach ( $data as $row )
+    {
+       foreach( array_keys($row) as $field )
+        {
+          $_SESSION[$field] = $row[$field];
+        }
+    }
+
+    $_SESSION['msgs'][] = "Welkom ".$_SESSION['usr_voornaam'];
+
+    header( "Location: ../steden.php");
+
 }
 else
 {
-    print "HELAAS!";
+    header( "Location: ../no_access.php");
+    unset( $_SESSION['user'] );
 }
 
 function LoginCheck()

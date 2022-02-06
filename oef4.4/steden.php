@@ -14,6 +14,7 @@ PrintNavbar();
     <div class="row">
 
 <?php
+var_dump($_SESSION['user']);
     //toon messages als er zijn
     foreach ( $msgs as $msg )
     {
@@ -22,7 +23,7 @@ PrintNavbar();
 
 
     //get data
-    $data = GetData( "select * from image" );
+    $data = GetData( "select * from images" );
 
     //get template
     $template = file_get_contents("templates/column.html");
