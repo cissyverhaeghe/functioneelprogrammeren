@@ -1,10 +1,6 @@
 <?php
 
-$configuration = array(
-    'db_dsn' => 'mysql:host=localhost;dbname=steden',
-    'db_user' => 'root',
-    'db_pass' => 'root',
-);
+
 
 class Container
 {

@@ -106,5 +106,15 @@ class City
         $this->img_lan_id = $img_lan_id;
     }
 
+    public function replaceValues($output)
+    {
+
+        foreach (get_object_vars($this) as $key => $value) {
+
+            $output = str_replace("@$key@", $value, $output);
+        }
+        return $output;
+    }
+
 
 }
