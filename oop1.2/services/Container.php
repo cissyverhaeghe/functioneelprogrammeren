@@ -9,6 +9,8 @@ class Container
 
     private $cityLoader;
 
+    private $userLoader;
+
     public function __construct(array $configuration)
     {
         $this->configuration = $configuration;

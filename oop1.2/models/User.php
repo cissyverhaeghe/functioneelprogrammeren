@@ -71,5 +71,15 @@ class User
         $this->usr_email = $usr_email;
     }
 
+    public function getVoornaam()
+    {
+        return strtoupper($this->getUsrVoornaam());
+    }
+
+    public function getNaam()
+    {
+        return strtoupper($this->getUsrNaam());
+    }
+
 
 }

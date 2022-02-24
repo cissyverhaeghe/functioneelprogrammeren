@@ -1,6 +1,13 @@
 <?php
-session_start();
 $app_root = $_SERVER["DOCUMENT_ROOT"] . "/functioneelprogrammeren/oop1.2";
+require_once "$app_root/models/City.php";
+require_once "$app_root/models/User.php";
+require_once "$app_root/services/CityLoader.php";
+require_once "$app_root/services/Container.php";
+require_once "$app_root/services/UserLoader.php";
+
+session_start();
+
 
 require_once "connection_data.php";
 require_once "pdo.php";
@@ -10,11 +17,7 @@ require_once "sanitize.php";
 require_once "validate.php";
 require_once "security.php";
 require_once "access_control.php";
-require_once "$app_root/models/City.php";
-require_once "$app_root/models/User.php";
-require_once "$app_root/services/CityLoader.php";
-require_once "$app_root/services/Container.php";
-require_once "$app_root/services/UserLoader.php";
+
 
 //initialize $errors array
 $errors = [];
