@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 require_once "lib/autoload.php";
 
 PrintHead();
-PrintJumbo();
+PrintJumbo("OO Programmeren");
 
 $configuration = array(
     'db_dsn' => 'mysql:host=localhost;dbname=steden',
@@ -27,7 +27,8 @@ $city = $cityLoader->findOneById($cityId);
         //get template
         $template = file_get_contents("templates/column_full.html");
         $output = $city->replaceValues($template);
-        print $output;
+        $new_output = $city->getTitle($output);
+        print $new_output;
 
 
         ?>
