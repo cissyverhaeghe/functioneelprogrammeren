@@ -19,7 +19,7 @@ class CityLoader
 
         $cities = array();
         foreach ($citiesData as $cityData) {
-            $ships[] = $this->createShipFromData($cityData);
+            $cities[] = $this->createCitiesFromData($cityData);
         }
 
         return $cities;

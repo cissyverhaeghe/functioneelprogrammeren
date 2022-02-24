@@ -7,12 +7,6 @@ require_once "lib/autoload.php";
 PrintHead();
 PrintJumbo("OO Programmeren");
 
-$configuration = array(
-    'db_dsn' => 'mysql:host=localhost;dbname=steden',
-    'db_user' => 'root',
-    'db_pass' => 'root',
-);
-
 $container = new Container($configuration);
 $cityLoader = $container->getCityLoader();
 $cityId = isset($_GET['img_id']) ? ($_GET['img_id']) : null;

@@ -3,19 +3,29 @@ error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 require_once "autoload.php";
 
+$container = new Container($configuration);
+$userLoader = $container->getUserLoader();
+
 if ( LoginCheck() )
 {
     $email = $_POST['usr_email'];
     $sql = "SELECT * FROM user WHERE usr_email='$email' ";
     $data = GetData($sql);
+    $user = $userLoader->createUserFromData($data);
+    var_dump($user);
 
-    foreach ( $data as $row )
-    {
-       foreach( array_keys($row) as $field )
-        {
-          $_SESSION[$field] = $row[$field];
-        }
+    foreach ($user as $key => $value){
+        $_SESSION[$key] = $value;
     }
+
+//
+//    foreach ( $data as $row )
+//    {
+//       foreach( array_keys($row) as $field )
+//        {
+//          $_SESSION[$field] = $row[$field];
+//        }
+//    }
 
     $_SESSION['msgs'][] = "Welkom ".$_SESSION['usr_voornaam'];
 

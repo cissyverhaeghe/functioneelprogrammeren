@@ -39,4 +39,15 @@ class Container
         return $this->cityLoader;
     }
 
+    /**
+     * @return UserLoader
+     */
+    public function getUserLoader()
+    {
+        if($this->userLoader === null){
+            $this->userLoader = new UserLoader($this->getPDO());
+        }
+        return $this->userLoader;
+    }
+
 }

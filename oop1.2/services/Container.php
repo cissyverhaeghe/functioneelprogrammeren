@@ -1,7 +1,6 @@
 <?php
 
 
-
 class Container
 {
     private $configuration;
@@ -33,10 +32,22 @@ class Container
      */
     public function getCityLoader()
     {
-        if($this->cityLoader === null){
+        if ($this->cityLoader === null) {
             $this->cityLoader = new CityLoader($this->getPDO());
         }
         return $this->cityLoader;
     }
+
+    /**
+     * @return UserLoader
+     */
+    public function getUserLoader()
+    {
+        if ($this->userLoader === null) {
+            $this->userLoader = new UserLoader($this->getPDO());
+        }
+        return $this->userLoader;
+    }
+
 
 }
