@@ -26,11 +26,8 @@ $city = $cityLoader->findOneById($cityId);
 
         //get template
         $template = file_get_contents("templates/column_full.html");
-        //replace values in template
         $output = $city->replaceValues($template);
-        //replace the title and put to caps
         $new_output = $city->getTitle($output);
-        //print output
         print $new_output;
 
 

@@ -120,7 +120,7 @@ class City
 
     public function getTitle($output)
     {
-        foreach ($this as $key => $value) {
+        foreach (get_object_vars($this) as $key => $value) {
             if ($key === "img_title") {
                 $titel = strtoupper($value);
                 $output = str_replace("@img_title@", $titel, $output);
