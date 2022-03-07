@@ -28,7 +28,7 @@ class User
      */
     public function getUsrVoornaam()
     {
-        return $this->usr_voornaam;
+        return strtoupper($this->usr_voornaam);
     }
 
     /**
@@ -44,7 +44,7 @@ class User
      */
     public function getUsrNaam()
     {
-        return $this->usr_naam;
+        return strtoupper($this->usr_naam);
     }
 
     /**

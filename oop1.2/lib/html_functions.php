@@ -18,11 +18,9 @@ function PrintJumbo($title = "", $subtitle = "")
 function PrintNavbar()
 {
     $user = $_SESSION['user'];
-    var_dump($user);
-//    $voornaam = $user->getUserVoornaam();
     $navbar = file_get_contents("templates/navbar.html");
-    $navbar = str_replace("@usr_voornaam@", $user->getUserVoornaam(), $navbar);
-    $navbar = str_replace("@usr_naam@", $user->getUserNaam(), $navbar);
+    $navbar = str_replace("@usr_voornaam@", $user->getUsrVoornaam(), $navbar);
+    $navbar = str_replace("@usr_naam@", $user->getUsrNaam(), $navbar);
 
     print $navbar;
 }

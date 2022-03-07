@@ -10,15 +10,21 @@ if (LoginCheck()) {
     $email = $_POST['usr_email'];
     $sql = "SELECT * FROM user WHERE usr_email='$email' ";
     $data = GetData($sql);
-    $user = $userLoader->createUserFromData($data);
-    var_dump($user);
-    die;
-    $_SESSION['user'] = $user;
-//    foreach ($user as $key => $value) {
-//        $_SESSION[$key] = $value;
-//    }
+    $user = new User();
+    foreach ($data as $row) {
+        {
+            $user->setUsrId($row['usr_id']);
+            $user->setUsrEmail($row['usr_email']);
+            $user->setUsrVoornaam($row['usr_voornaam']);
+            $user->setUsrNaam($row['usr_naam']);
+        }}
+//    var_dump($user);
+//    $user = $userLoader->createUserFromData($data);
 
-    $_SESSION['msgs'][] = "Welkom " . $_SESSION['usr_voornaam'];
+//    die;
+    $_SESSION['user'] = $user;
+
+    $_SESSION['msgs'][] = "Welkom " . $_SESSION['user']->getUsrVoornaam();
 
     header("Location: ../steden.php");
 

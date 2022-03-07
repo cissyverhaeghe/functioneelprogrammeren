@@ -1,7 +1,7 @@
 <?php
 
 if (!$public_access){
-    if($_SESSION['usr_voornaam']){
+    if($_SESSION['user']){
         $public_access = true;
     }
     else {
