@@ -6,7 +6,6 @@ require_once "$app_root/services/CityLoader.php";
 require_once "$app_root/services/Container.php";
 require_once "$app_root/services/UserLoader.php";
 require_once "$app_root/services/DBManager.php";
-require_once "$app_root/services/Logger.php";
 
 session_start();
 
@@ -44,7 +43,7 @@ if (key_exists('OLD_POST', $_SESSION) and is_array($_SESSION['OLD_POST'])) {
     $_SESSION['OLD_POST'] = [];
 }
 
-$credentials = [
+$credentials =[
     "servername" => "localhost",
     "username" => "root",
     "password" => "root",
@@ -55,7 +54,5 @@ $credentials = [
 //create new DBManager
 $dbm = new DBManager($credentials);
 
-//create logger
-$logger = new Logger();
 
 
