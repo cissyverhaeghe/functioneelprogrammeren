@@ -1,7 +1,7 @@
 <?php
 require_once "autoload.php";
 
-function MakeSelect( $fkey, $value, $sql, $dmb )
+function MakeSelect( $fkey, $value, $sql, $dbm )
 {
     $select = "<select id=$fkey name=$fkey value=$value>";
     $select .= "<option value='0'></option>";

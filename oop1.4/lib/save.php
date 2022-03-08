@@ -3,9 +3,9 @@ error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 require_once "autoload.php";
 
-SaveFormData();
+SaveFormData($dbm, $logger);
 
-function SaveFormData()
+function SaveFormData($dbm, $logger)
 {
     if ( $_SERVER['REQUEST_METHOD'] == "POST" )
     {
@@ -30,7 +30,7 @@ function SaveFormData()
 
         //validation
         $sending_form_uri = $_SERVER['HTTP_REFERER'];
-        CompareWithDatabase( $table, $pkey );
+        CompareWithDatabase( $table, $pkey, $dbm);
 
         //Validaties voor het registratieformulier
         if ( $table == "user" )
@@ -91,6 +91,7 @@ function SaveFormData()
         //extend SQL with WHERE
         $sql .= $where;
 
+        $logger->Log($sql);
         //run SQL
         $result = $dbm->ExecuteSQL( $sql );
 

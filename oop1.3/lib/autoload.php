@@ -6,7 +6,7 @@ require_once "$app_root/services/CityLoader.php";
 require_once "$app_root/services/Container.php";
 require_once "$app_root/services/UserLoader.php";
 require_once "$app_root/services/DBManager.php";
-require_once "$app_root/services/Logger.php";
+
 
 session_start();
 
@@ -55,7 +55,6 @@ $credentials = [
 //create new DBManager
 $dbm = new DBManager($credentials);
 
-//create logger
-$logger = new Logger();
+
 
 

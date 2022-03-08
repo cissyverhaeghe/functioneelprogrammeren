@@ -1,7 +1,7 @@
 <?php
 require_once "autoload.php";
 
-function CompareWithDatabase( $table, $pkey ): void
+function CompareWithDatabase( $table, $pkey, $dbm ): void
 {
     $data = $dbm->GetData( "SHOW FULL COLUMNS FROM $table" );
 

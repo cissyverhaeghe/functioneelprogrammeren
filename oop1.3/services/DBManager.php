@@ -6,10 +6,9 @@ class DBManager
     private $conn;
     private $logger;
 
-    public function __construct(array $configuration, $logger)
+    public function __construct(array $configuration)
     {
         $this->configuration = $configuration;
-        $this->logger= $logger;
     }
 
     public function CreateConnection()
