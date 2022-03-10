@@ -13,8 +13,17 @@ require_once "./models/City.php";
 require_once "./services/CityLoader.php";
 require_once "./services/Container.php";
 
+$configuration = array(
+    'db_dsn' => 'mysql:host=localhost;dbname=steden',
+    'db_user' => 'root',
+    'db_pass' => 'root',
+);
+
+$container = new Container($configuration);
 //initialize $errors array
 $errors = [];
+
+
 
 if ( key_exists( 'errors', $_SESSION ) AND is_array( $_SESSION['errors']) )
 {

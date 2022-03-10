@@ -1,5 +1,5 @@
 <?php
-$app_root = $_SERVER["DOCUMENT_ROOT"] . "/functioneelprogrammeren/oop1.4";
+$app_root = $_SERVER["DOCUMENT_ROOT"] . "/functioneelprogrammeren/oop1.5";
 require_once "$app_root/models/City.php";
 require_once "$app_root/models/User.php";
 require_once "$app_root/services/CityLoader.php";
@@ -7,6 +7,7 @@ require_once "$app_root/services/Container.php";
 require_once "$app_root/services/UserLoader.php";
 require_once "$app_root/services/DBManager.php";
 require_once "$app_root/services/Logger.php";
+require_once "$app_root/services/MessageService.php";
 
 session_start();
 
@@ -58,5 +59,8 @@ $logger = new Logger();
 //create new DBManager
 $dbm = new DBManager($credentials, $logger);
 
+//create messageService
+
+$ms = new MessageService();
 
 

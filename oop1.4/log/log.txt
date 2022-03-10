@@ -1,1 +1,106 @@
-08-03-2022 09:42:26: UPDATE images SET  img_title = 'Big Ben!!!'  ,  img_filename = 'london.jpg'  ,  img_width = '7899'  ,  img_height = '12345555'  ,  img_lan_id = '4'  ,  img_date = '2022-10-02'  WHERE img_id = 1 \r\n
+08-03-2022 09:42:26: UPDATE images SET  img_title = 'Big Ben!!!'  ,  img_filename = 'london.jpg'  ,  img_width = '7899'  ,  img_height = '12345555'  ,  img_lan_id = '4'  ,  img_date = '2022-10-02'  WHERE img_id = 1 \r\n08-03-2022 10:41:13: UPDATE images SET  img_title = 'Big Ben!!!'  ,  img_filename = 'london.jpg'  ,  img_width = '7899'  ,  img_height = '12345555'  ,  img_lan_id = '4'  ,  img_date = '2022-10-02'  WHERE img_id = 1 \r\n08-03-2022 10:41:23: UPDATE images SET  img_title = 'Big Ben!!!'  ,  img_filename = 'london.jpg'  ,  img_width = '7899'  ,  img_height = '12345555'  ,  img_lan_id = '4'  ,  img_date = ''  WHERE img_id = 1 \r\n10-03-2022 10:20:21: UPDATE images SET  img_title = 'Big Ben!!!'  ,  img_filename = ''  ,  img_width = '7899'  ,  img_height = '12345555'  ,  img_lan_id = '4'  ,  img_date = '0000-00-00'  WHERE img_id = 1 \r\n10-03-2022 10:20:28: UPDATE images SET  img_title = 'Big Ben!!!'  ,  img_filename = 'london.jpg'  ,  img_width = '7899'  ,  img_height = '12345555'  ,  img_lan_id = '4'  ,  img_date = '0000-00-00'  WHERE img_id = 1 \r\n10-03-2022 10:58:22: MessageService::__set_state(array(
+   'errors' => 
+  array (
+  ),
+   'input_errors' => 
+  array (
+  ),
+   'infos' => 
+  array (
+  ),
+))\r\n10-03-2022 11:00:47: storing in session: infos, , Welkom NAAM\r\n10-03-2022 11:02:55: storing in session: infos, , Welkom NAAM\r\n10-03-2022 11:04:56: storing in session: infos, , Welkom NAAM\r\n10-03-2022 11:04:56: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '9',
+     'usr_voornaam' => 'naam',
+     'usr_naam' => 'naam',
+     'usr_email' => '123@test.be',
+  )),
+  'infos' => 
+  array (
+    0 => 'Welkom NAAM',
+  ),
+)\r\n10-03-2022 11:09:07: storing in session: infos, , Welkom NAAM\r\n10-03-2022 11:09:07: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '9',
+     'usr_voornaam' => 'naam',
+     'usr_naam' => 'naam',
+     'usr_email' => '123@test.be',
+  )),
+  'infos' => 
+  array (
+    0 => 'Welkom NAAM',
+  ),
+)\r\n10-03-2022 11:10:52: storing in session: infos, , Welkom NAAM\r\n10-03-2022 11:10:52: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '9',
+     'usr_voornaam' => 'naam',
+     'usr_naam' => 'naam',
+     'usr_email' => '123@test.be',
+  )),
+  'infos' => 
+  array (
+    0 => 'Welkom NAAM',
+  ),
+)\r\n10-03-2022 11:11:49: storing in session: infos, , Welkom NAAM\r\n10-03-2022 11:11:49: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '9',
+     'usr_voornaam' => 'naam',
+     'usr_naam' => 'naam',
+     'usr_email' => '123@test.be',
+  )),
+  'infos' => 
+  array (
+    0 => 'Welkom NAAM',
+  ),
+)\r\n10-03-2022 11:17:04: storing in session: infos, , Welkom NAAM\r\n10-03-2022 11:17:04: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '9',
+     'usr_voornaam' => 'naam',
+     'usr_naam' => 'naam',
+     'usr_email' => '123@test.be',
+  )),
+  'infos' => 
+  array (
+    0 => 'Welkom NAAM',
+  ),
+)\r\n10-03-2022 11:20:27: storing in session: input_errors, usr_email, Er bestaat al een gebruiker met dit e-mailadres\r\n10-03-2022 11:20:27: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '9',
+     'usr_voornaam' => 'naam',
+     'usr_naam' => 'naam',
+     'usr_email' => '123@test.be',
+  )),
+  'input_errors' => 
+  array (
+    'usr_email' => 'Er bestaat al een gebruiker met dit e-mailadres',
+  ),
+)\r\n10-03-2022 11:20:27: storing in session: infos, , Bedankt voor uw registratie\r\n10-03-2022 11:20:27: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '9',
+     'usr_voornaam' => 'naam',
+     'usr_naam' => 'naam',
+     'usr_email' => '123@test.be',
+  )),
+  'input_errors' => 
+  array (
+    'usr_email' => 'Er bestaat al een gebruiker met dit e-mailadres',
+  ),
+  'infos' => 
+  array (
+    0 => 'Bedankt voor uw registratie',
+  ),
+)\r\n10-03-2022 11:20:27: INSERT INTO user SET  usr_voornaam = 'japie'  ,  usr_naam = 'krekel'  ,  usr_email = '123@test.be'  ,  usr_password = '$2y$10$kV/bZ6OGl6zIhPFRoLenuu3i7UlkHG8MvBl67KPwjXw25hxPV/31W' \r\n

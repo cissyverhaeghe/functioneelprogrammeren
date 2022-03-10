@@ -24,8 +24,9 @@ if (LoginCheck($dbm)) {
 
 //    die;
     $_SESSION['user'] = $user;
+//    $logger->Log(var_export($ms, true));
+    $ms->AddMessage("infos", "Welkom " . $_SESSION['user']->getUsrVoornaam() );
 
-    $_SESSION['msgs'][] = "Welkom " . $_SESSION['user']->getUsrVoornaam();
 
     header("Location: ../steden.php");
 

@@ -3,9 +3,9 @@ error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 require_once "autoload.php";
 
-SaveFormData($dbm, $logger);
+SaveFormData($dbm, $logger, $ms);
 
-function SaveFormData($dbm, $logger)
+function SaveFormData($dbm, $logger , $ms)
 {
     if ( $_SERVER['REQUEST_METHOD'] == "POST" )
     {
@@ -30,18 +30,18 @@ function SaveFormData($dbm, $logger)
 
         //validation
         $sending_form_uri = $_SERVER['HTTP_REFERER'];
-        CompareWithDatabase( $table, $pkey, $dbm);
+        CompareWithDatabase( $table, $pkey, $dbm, $ms);
 
         //Validaties voor het registratieformulier
         if ( $table == "user" )
         {
                 ValidateUsrPassword( $_POST['usr_password'] );
                 ValidateUsrEmail( $_POST['usr_email'] );
-                CheckUniqueUsrEmail( $_POST['usr_email'] );
+                CheckUniqueUsrEmail( $_POST['usr_email'], $dbm );
         }
 
         //terugkeren naar afzender als er een fout is
-        if ( count($_SESSION['errors']) > 0 )
+        if ( $ms->CountNewErrors() > 0 )
         {
             $_SESSION['OLD_POST'] = $_POST;
             header( "Location: " . $sending_form_uri ); exit();
@@ -74,7 +74,7 @@ function SaveFormData($dbm, $logger)
                 $value = password_hash( $value, PASSWORD_BCRYPT );
                 $keys_values[] = " $field = '$value' " ;
 
-                $_SESSION['msgs'][] = "Bedankt voor uw registratie";
+                $ms->AddMessage("infos", "Bedankt voor uw registratie") ;
             }
             else //all other data-fields
             {

@@ -32,7 +32,7 @@ class CityLoader
 
     public function findOneById($id)
     {
-        $pdo = $this->getPDO();
+        $pdo = $this->pdo;
         $statement = $pdo->prepare('SELECT * FROM images WHERE img_id =' . $id);
         $statement->execute(array('img_id' => $id));
         $cityArray = $statement->fetch(PDO::FETCH_ASSOC);
@@ -59,7 +59,7 @@ class CityLoader
 
     private function queryForCities()
     {
-        $pdo = $this->getPDO();
+        $pdo = $this->pdo;
         $statement = $pdo->prepare('SELECT * FROM images');
         $statement->execute();
         $citiesArray = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -67,11 +67,5 @@ class CityLoader
         return $citiesArray;
     }
 
-    /**
-     * @return PDO
-     */
-    private function getPDO()
-    {
-        return $this->pdo;
-    }
+
 }
