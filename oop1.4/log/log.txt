@@ -142,4 +142,17 @@
   array (
     0 => 'Welkom JAPIE',
   ),
+)\r\n17-03-2022 11:50:39: storing in session: infos, , Welkom JAPIE\r\n17-03-2022 11:50:39: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '10',
+     'usr_voornaam' => 'japie',
+     'usr_naam' => 'krekel',
+     'usr_email' => '123@test.be',
+  )),
+  'infos' => 
+  array (
+    0 => 'Welkom JAPIE',
+  ),
 )\r\n

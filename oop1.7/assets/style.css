@@ -22,3 +22,9 @@ div.msgs {
     font-size: 20px;
     border: 1px solid green;
 }
+
+.img-fluid {
+    display: block;
+    width: 600px;
+    height: 250px;
+}

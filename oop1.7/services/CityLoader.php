@@ -1,6 +1,6 @@
 <?php
 
-class CityLoader
+class CityLoader implements ItemInterface
 {
     private $pdo;
 
@@ -13,13 +13,13 @@ class CityLoader
     /**
      * @return City[]
      */
-    public function getCities()
+    public function getItems()
     {
-        $citiesData = $this->queryForCities();
+        $citiesData = $this->queryForItems();
 
         $cities = array();
         foreach ($citiesData as $cityData) {
-            $ships[] = $this->createShipFromData($cityData);
+            $cities[] = $this->createItemFromData($cityData);
         }
 
         return $cities;
@@ -41,23 +41,23 @@ class CityLoader
             return null;
         }
 
-        return $this->createCityFromData($cityArray);
+        return $this->createItemFromData($cityArray);
     }
 
-    private function createCityFromData(array $cityData)
+    public function createItemFromData($data)
     {
         $city = new City();
-        $city->setImgId($cityData['img_id']);
-        $city->setImgFilename($cityData['img_filename']);
-        $city->setImgTitle($cityData['img_title']);
-        $city->setImgWidth($cityData['img_width']);
-        $city->setImgHeight($cityData['img_height']);
-        $city->setImgLanId($cityData['img_lan_id']);
+        $city->setImgId($data['img_id']);
+        $city->setImgFilename($data['img_filename']);
+        $city->setImgTitle($data['img_title']);
+        $city->setImgWidth($data['img_width']);
+        $city->setImgHeight($data['img_height']);
+        $city->setImgLanId($data['img_lan_id']);
 
         return $city;
     }
 
-    private function queryForCities()
+    public function queryForItems()
     {
         $pdo = $this->getPDO();
         $statement = $pdo->prepare('SELECT * FROM images');

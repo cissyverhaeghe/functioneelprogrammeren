@@ -11,8 +11,8 @@ class Logger
      */
     public function __construct()
     {
-        $this->setFp(fopen($_SERVER["DOCUMENT_ROOT"] . "/functioneelprogrammeren\oop1.4\log\log.txt", "a+"));
-        $this->logfile = $_SERVER["DOCUMENT_ROOT"] . "/functioneelprogrammeren\oop1.4\log\log.txt";
+        $this->setFp(fopen($_SERVER["DOCUMENT_ROOT"] . "/functioneelprogrammeren\oop1.7\log\log.txt", "a+"));
+        $this->logfile = $_SERVER["DOCUMENT_ROOT"] . "/functioneelprogrammeren\oop1.7\log\log.txt";
     }
 
     public function Log($msg)
@@ -24,7 +24,6 @@ class Logger
     {
         return file_get_contents($this->logfile);
     }
-
 
 
     /**

@@ -1,9 +1,14 @@
 <?php
 require_once "autoload.php";
 
-function CompareWithDatabase($table, $pkey, $dbm, $ms): void
+function CompareWithDatabase($table, $pkey, $container): void
 {
+    $dbm = $container->getDBManager();
+    $ms = $container->getMessageService();
+
+
     $data = $dbm->GetData("SHOW FULL COLUMNS FROM $table");
+    $logger = $container->getLogger();
 
     //overloop alle in de databank gedefinieerde velden van de tabel
     foreach ($data as $row) {
@@ -48,7 +53,7 @@ function CompareWithDatabase($table, $pkey, $dbm, $ms): void
                 //is de tekst niet te lang?
                 if (strlen($sent_value) > $length) {
                     $msg = "Dit veld kan maximum $length tekens bevatten";
-                    $ms->AddMessage("input_errors", $msg, $fieldname);
+                    $ms->AddMessage("input_errors", $msg, $logger, $fieldname);
                 }
             }
 

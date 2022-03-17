@@ -13,11 +13,15 @@ class Container
 
     private $userLoader;
 
+    private $waterLoader;
+
     private $dbManager;
 
     private $logger;
 
     private $messageService;
+
+
 
     public function __construct(array $configuration, $credentials)
     {
@@ -93,4 +97,14 @@ class Container
         return $this->messageService;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getWaterLoader()
+    {
+        if ($this->WaterLoader === null) {
+            $this->WaterLoader = new Waterloader($this->getPDO());
+        }
+        return $this->WaterLoader;
+    }
 }

@@ -2,8 +2,12 @@
 $app_root = $_SERVER["DOCUMENT_ROOT"] . "/functioneelprogrammeren/oop1.7";
 require_once "$app_root/models/City.php";
 require_once "$app_root/models/User.php";
-require_once "$app_root/services/CityLoader.php";
+require_once "$app_root/models/Waterbody.php";
+require_once "$app_root/models/Sea.php";
+require_once "$app_root/models/River.php";
 require_once "$app_root/services/Container.php";
+require_once "$app_root/services/ItemInterface.php";
+require_once "$app_root/services/CityLoader.php";
 require_once "$app_root/services/UserLoader.php";
 require_once "$app_root/services/DBManager.php";
 require_once "$app_root/services/Logger.php";

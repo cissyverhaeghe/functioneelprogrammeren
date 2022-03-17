@@ -64,14 +64,10 @@ class MessageService
         return $this->input_errors;
     }
 
-    public function AddMessage($type, $msg, $logger, $key = null)
+    public function AddMessage($type, $msg, $key = null)
     {
         if ($key) $_SESSION[$type][$key] = $msg;
         else $_SESSION[$type][] = $msg;
-
-        $logger->Log("storing in session: $type, $key, $msg");
-        $logger->Log(var_export($_SESSION, true));
-
     }
 
     public function ShowErrors()

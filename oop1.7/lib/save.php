@@ -3,10 +3,14 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require_once "autoload.php";
 
-SaveFormData($dbm, $logger, $ms);
+SaveFormData($container);
 
-function SaveFormData($dbm, $logger, $ms)
+function SaveFormData($container)
 {
+    $dbm = $container->getDBManager();
+    $logger = $container->getLogger();
+    $ms = $container->getMessageService();
+
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //controle CSRF token
         if (!key_exists("csrf", $_POST)) die("Missing CSRF");
@@ -29,7 +33,7 @@ function SaveFormData($dbm, $logger, $ms)
 
         //validation
         $sending_form_uri = $_SERVER['HTTP_REFERER'];
-        CompareWithDatabase($table, $pkey, $dbm, $ms);
+        CompareWithDatabase($table, $pkey, $container);
 
         //Validaties voor het registratieformulier
         if ($table == "user") {
