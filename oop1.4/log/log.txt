@@ -103,4 +103,43 @@
   array (
     0 => 'Bedankt voor uw registratie',
   ),
-)\r\n10-03-2022 11:20:27: INSERT INTO user SET  usr_voornaam = 'japie'  ,  usr_naam = 'krekel'  ,  usr_email = '123@test.be'  ,  usr_password = '$2y$10$kV/bZ6OGl6zIhPFRoLenuu3i7UlkHG8MvBl67KPwjXw25hxPV/31W' \r\n
+)\r\n10-03-2022 11:20:27: INSERT INTO user SET  usr_voornaam = 'japie'  ,  usr_naam = 'krekel'  ,  usr_email = '123@test.be'  ,  usr_password = '$2y$10$kV/bZ6OGl6zIhPFRoLenuu3i7UlkHG8MvBl67KPwjXw25hxPV/31W' \r\n10-03-2022 11:40:22: storing in session: infos, , Welkom JAPIE\r\n10-03-2022 11:40:22: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '10',
+     'usr_voornaam' => 'japie',
+     'usr_naam' => 'krekel',
+     'usr_email' => '123@test.be',
+  )),
+  'infos' => 
+  array (
+    0 => 'Welkom JAPIE',
+  ),
+)\r\n10-03-2022 11:40:33: storing in session: input_errors, img_date, 0000-00-00 is geen geldige datum\r\n10-03-2022 11:40:33: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '10',
+     'usr_voornaam' => 'japie',
+     'usr_naam' => 'krekel',
+     'usr_email' => '123@test.be',
+  )),
+  'input_errors' => 
+  array (
+    'img_date' => '0000-00-00 is geen geldige datum',
+  ),
+)\r\n10-03-2022 11:40:33: UPDATE images SET  img_title = 'Big Ben!!!'  ,  img_filename = 'london.jpg'  ,  img_width = '7899'  ,  img_height = '12345555'  ,  img_lan_id = '4'  ,  img_date = '0000-00-00'  WHERE img_id = 1 \r\n10-03-2022 11:47:12: storing in session: infos, , Welkom JAPIE\r\n10-03-2022 11:47:12: array (
+  'lastest_csrf' => '',
+  'user' => 
+  User::__set_state(array(
+     'usr_id' => '10',
+     'usr_voornaam' => 'japie',
+     'usr_naam' => 'krekel',
+     'usr_email' => '123@test.be',
+  )),
+  'infos' => 
+  array (
+    0 => 'Welkom JAPIE',
+  ),
+)\r\n
