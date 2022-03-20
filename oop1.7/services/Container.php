@@ -102,9 +102,9 @@ class Container
      */
     public function getWaterLoader()
     {
-        if ($this->WaterLoader === null) {
-            $this->WaterLoader = new Waterloader($this->getPDO());
+        if ($this->waterLoader === null) {
+            $this->waterLoader = new WaterLoader($this->getPDO());
         }
-        return $this->WaterLoader;
+        return $this->waterLoader;
     }
 }

@@ -26,5 +26,10 @@ div.msgs {
 .img-fluid {
     display: block;
     width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+
+#column_water {
     height: 250px;
 }

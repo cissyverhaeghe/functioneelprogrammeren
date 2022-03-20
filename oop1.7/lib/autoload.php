@@ -9,6 +9,7 @@ require_once "$app_root/services/Container.php";
 require_once "$app_root/services/ItemInterface.php";
 require_once "$app_root/services/CityLoader.php";
 require_once "$app_root/services/UserLoader.php";
+require_once "$app_root/services/WaterLoader.php";
 require_once "$app_root/services/DBManager.php";
 require_once "$app_root/services/Logger.php";
 require_once "$app_root/services/MessageService.php";

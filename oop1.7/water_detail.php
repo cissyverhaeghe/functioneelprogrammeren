@@ -1,15 +1,21 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+$public_access = false;
 
 require_once "lib/autoload.php";
 
 PrintHead();
 PrintJumbo("Water detail");
 
+//get the water id via the url
 $waterId = isset($_GET['wat_id']) ? ($_GET['wat_id']) : null;
+
+//create a waterbody object
 $waterBody = $container->getWaterLoader()->findOneById($waterId);
+
 ?>
+
 
 <div class="container">
     <div class="row">
@@ -17,11 +23,11 @@ $waterBody = $container->getWaterLoader()->findOneById($waterId);
         <?php
 
         //get template
-        $template = file_get_contents("templates/column_full.html");
-        $output = $city->replaceValues($template);
-        $new_output = $city->getTitle($output);
-        print $new_output;
-
+        $template = file_get_contents("templates/column_water_detail.html");
+        //merge template with data from the waterbody object
+        $output = $waterBody->replaceValues($template);
+        //print output
+        print $output;
 
         ?>
 

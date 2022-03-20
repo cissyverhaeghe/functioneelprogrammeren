@@ -1,6 +1,6 @@
 <?php
 
-class Waterloader implements ItemInterface
+class WaterLoader implements ItemInterface
 {
     private $pdo;
 
@@ -34,7 +34,7 @@ class Waterloader implements ItemInterface
         $pdo = $this->getPDO();
         $statement = $pdo->prepare('SELECT * FROM water WHERE wat_id =' . $id);
         $statement->execute(array('wat_id' => $id));
-        $cityArray = $statement->fetch(PDO::FETCH_ASSOC);
+        $waterArray = $statement->fetch(PDO::FETCH_ASSOC);
 
         if (!$waterArray) {
             return null;
@@ -46,7 +46,7 @@ class Waterloader implements ItemInterface
     public function createItemFromData($data)
     {
 
-        if ($data['type'] == 'rivier') {
+        if ($data['wat_type'] === 'rivier') {
             $waterBody = new River();
             $waterBody->setWatLocation($data['wat_location']);
         } else {
@@ -54,9 +54,10 @@ class Waterloader implements ItemInterface
         }
 
         $waterBody->setWatId($data['wat_id']);
-        $waterBody->setWatImg($data['wat_location']);
+        $waterBody->setWatImg($data['wat_img']);
         $waterBody->setWatName($data['wat_name']);
         $waterBody->setWatType($data['wat_type']);
+        $waterBody->setWatDepth($data['wat_depth']);
 
         return $waterBody;
     }

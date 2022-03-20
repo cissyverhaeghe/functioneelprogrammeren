@@ -6,6 +6,23 @@ abstract class Waterbody
     private $wat_name;
     private $wat_type;
     private $wat_img;
+    private $wat_depth;
+
+    /**
+     * @return mixed
+     */
+    public function getWatDepth()
+    {
+        return $this->wat_depth;
+    }
+
+    /**
+     * @param mixed $wat_depth
+     */
+    public function setWatDepth($wat_depth): void
+    {
+        $this->wat_depth = $wat_depth;
+    }
 
     abstract public function getType();
 
@@ -71,6 +88,15 @@ abstract class Waterbody
     public function setWatImg($wat_img): void
     {
         $this->wat_img = $wat_img;
+    }
+
+    public function replaceValues($output)
+    {
+
+        foreach ($this as $key => $value) {
+            $output = str_replace("@$key@", $value, $output);
+        }
+        return $output;
     }
 
 

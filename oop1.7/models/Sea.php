@@ -1,6 +1,6 @@
 <?php
 
-class Sea
+class Sea extends Waterbody
 {
     public function getType()
     {
