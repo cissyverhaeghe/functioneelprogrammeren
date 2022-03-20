@@ -2,8 +2,7 @@
 
 class River extends Waterbody
 {
-    private $wat_location;
-
+    protected $wat_location;
 
     /**
      * @return mixed

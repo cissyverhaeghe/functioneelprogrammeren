@@ -5,7 +5,7 @@ $public_access = false;
 require_once "lib/autoload.php";
 
 PrintHead();
-PrintJumbo($title = "Waterwegen in Europa");
+PrintJumbo($title = "Waterwegen in de wereld");
 PrintNavbar();
 
 ?>

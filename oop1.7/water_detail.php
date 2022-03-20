@@ -6,7 +6,6 @@ $public_access = false;
 require_once "lib/autoload.php";
 
 PrintHead();
-PrintJumbo("Water detail");
 
 //get the water id via the url
 $waterId = isset($_GET['wat_id']) ? ($_GET['wat_id']) : null;
@@ -14,8 +13,13 @@ $waterId = isset($_GET['wat_id']) ? ($_GET['wat_id']) : null;
 //create a waterbody object
 $waterBody = $container->getWaterLoader()->findOneById($waterId);
 
-?>
+//print the name and location in the title if waterBody is a river
+if ($waterBody->getType() === "Rivier") {
+    PrintJumbo($waterBody->getWatName(), "Locatie: " . $waterBody->getWatLocation());
+} //else only print the name in the title
+else PrintJumbo($waterBody->getWatName());
 
+?>
 
 <div class="container">
     <div class="row">
