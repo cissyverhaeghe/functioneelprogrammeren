@@ -1,6 +1,6 @@
 <?php
 $request_uri = explode("/", $_SERVER['REQUEST_URI']);
-$app_root = "/";
+$app_root = "/functioneelprogrammeren/oef12.1";
 
 //require_once "pdo.php";
 require_once "html_functions.php";
