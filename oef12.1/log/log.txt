@@ -385,3 +385,6 @@ De variabele steven: 'Steven'
 DIT BERICHT KOMT UIT STEDEN.PHP
 De variabele steven: 'Steven'
 2022-03-22 11:09:19: select * from images
+DIT BERICHT KOMT UIT STEDEN.PHP
+De variabele steven: 'Steven'
+2022-03-22 11:18:28: select * from images

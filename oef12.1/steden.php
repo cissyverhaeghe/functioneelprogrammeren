@@ -22,7 +22,17 @@ $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $curl_response = curl_exec($curl);
 
-print($curl_response);
+$response = json_decode($curl_response);
+
+
+//
+//$row['description'] = $response->weather[0]->description;
+//$row['temp'] = $response->main->temp;
+//$row['humidity'] = $response->main->humidity;
+
+var_dump($response);
+
+$data[$key] = $row;
 
 ?>
 
