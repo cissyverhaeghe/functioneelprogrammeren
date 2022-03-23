@@ -14,10 +14,11 @@ $waterId = isset($_GET['wat_id']) ? ($_GET['wat_id']) : null;
 $waterBody = $container->getWaterLoader()->findOneById($waterId);
 
 //print the name and location in the title if waterBody is a river
+$waterBodyName = $waterBody->getWatName();
 if ($waterBody->getType() === "Rivier") {
-    PrintJumbo($waterBody->getWatName(), "Locatie: " . $waterBody->getWatLocation());
-} //else only print the name in the title
-else PrintJumbo($waterBody->getWatName());
+    PrintJumbo($waterBodyName, "Locatie: " . $waterBody->getWatLocation());
+} //else print the name and the surface in the title
+else PrintJumbo($waterBodyName, "Oppervlakte: " . number_format($waterBody->getWatSurface()) . " km²");
 
 ?>
 

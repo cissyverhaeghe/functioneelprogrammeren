@@ -16,7 +16,7 @@ class WaterLoader implements ItemInterface
     {
         $waterbodiesData = $this->queryForItems();
 
-        $cities = array();
+        $waterbodies = array();
         foreach ($waterbodiesData as $waterData) {
             $waterbodies[] = $this->createItemFromData($waterData);
         }
@@ -51,6 +51,7 @@ class WaterLoader implements ItemInterface
             $waterBody->setWatLocation($data['wat_location']);
         } else {
             $waterBody = new Sea();
+            $waterBody->setWatSurface($data['wat_surface']);
         }
 
         $waterBody->setWatId($data['wat_id']);
