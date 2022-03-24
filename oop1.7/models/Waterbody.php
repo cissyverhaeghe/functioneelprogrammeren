@@ -99,5 +99,12 @@ abstract class Waterbody
         return $output;
     }
 
+    public function getSubTitle()
+    {
+        if ($this->getType() === 'Rivier') {
+            return "Locatie: " . $this->getWatLocation();
+        } else return "Oppervlakte: " . number_format($this->getWatSurface()) . " km²";
+    }
+
 
 }

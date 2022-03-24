@@ -470,3 +470,10 @@ De variabele steven: 'Steven'
 DIT BERICHT KOMT UIT STEDEN.PHP
 De variabele steven: 'Steven'
 2022-03-23 17:59:46: select * from images
+2022-03-24 10:57:59: SELECT * FROM user WHERE usr_email='123@test.be' 
+DIT BERICHT KOMT UIT STEDEN.PHP
+De variabele steven: 'Steven'
+2022-03-24 10:58:00: select * from images
+DIT BERICHT KOMT UIT STEDEN.PHP
+De variabele steven: 'Steven'
+2022-03-24 11:07:10: select * from images

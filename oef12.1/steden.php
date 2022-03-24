@@ -11,8 +11,6 @@ PrintNavbar();
 //PrintMessages();
 
 
-
-
 ?>
 
 <div class="container">
@@ -42,7 +40,7 @@ PrintNavbar();
 
             $stad = $row['img_weather_location'];
             $lang = "nl";
-            $units="metric";
+            $units = "metric";
 
             $url = "$url_owm?q=$stad&lang=$lang&appid=$cissy_owm_key&units=$units";
             $curl = curl_init($url);

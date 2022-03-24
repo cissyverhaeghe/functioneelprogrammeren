@@ -15,10 +15,8 @@ $waterBody = $container->getWaterLoader()->findOneById($waterId);
 
 //print the name and location in the title if waterBody is a river
 $waterBodyName = $waterBody->getWatName();
-if ($waterBody->getType() === "Rivier") {
-    PrintJumbo($waterBodyName, "Locatie: " . $waterBody->getWatLocation());
-} //else print the name and the surface in the title
-else PrintJumbo($waterBodyName, "Oppervlakte: " . number_format($waterBody->getWatSurface()) . " km²");
+PrintJumbo($waterBodyName, $waterBody->getSubTitle());
+
 
 ?>
 
